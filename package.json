@@ -1,0 +1,27 @@
+{
+  "name": "methods-node",
+  "version": "1.0.50",
+  "description": "methods",
+  "main": "index.min.js",
+  "directories": {
+    "lib": "src"
+  },
+  "scripts": {
+    "test": "echo \\\"Error: no example specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aenuen/make-node.git"
+  },
+  "keywords": [
+    "methods"
+  ],
+  "author": "aenuen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aenuen/make-node/issues"
+  },
+  "homepage": "https://github.com/aenuen/make-node#readme",
+  "dependencies": {
+  }
+}
