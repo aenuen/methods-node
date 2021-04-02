@@ -3,5 +3,5 @@
  * @return {string}
  */
 export function addressBar_current() {
-    return location.href
+  return location.href
 }

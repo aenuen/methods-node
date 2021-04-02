@@ -3,5 +3,5 @@
  * @return {string}
  */
 export function addressBar_source() {
-    return document.referrer
+  return document.referrer
 }

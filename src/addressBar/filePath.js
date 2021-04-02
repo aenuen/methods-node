@@ -3,5 +3,5 @@
  * @return {string}
  */
 export function addressBar_filePath() {
-    return location.pathname
+  return location.pathname
 }

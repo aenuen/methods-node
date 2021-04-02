@@ -3,5 +3,5 @@
  * @returns {string}
  */
 export function browser_userAgent() {
-    return navigator.userAgent.toLowerCase()
+  return navigator.userAgent.toLowerCase()
 }

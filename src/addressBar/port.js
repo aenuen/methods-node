@@ -3,5 +3,5 @@
  * @return {string}
  */
 export function addressBar_port() {
-    return location.port
+  return location.port
 }

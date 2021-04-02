@@ -3,5 +3,5 @@
  * @return {string}
  */
 export function addressBar_hash() {
-    return location.hash
+  return location.hash.slice(1)
 }

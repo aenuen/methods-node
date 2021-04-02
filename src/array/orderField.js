@@ -1,9 +1,9 @@
-import {throw_empty} from "../throw/empty"
-import {throw_type} from "../throw/type"
-import {type_array} from "../type/array"
-import {type_boolean} from "../type/boolean"
-import {type_string} from "../type/string"
-import {arrayJson_reverse} from "../arrayJson/reverse"
+import { throw_empty } from '../throw/empty'
+import { throw_type } from '../throw/type'
+import { type_array } from '../type/array'
+import { type_boolean } from '../type/boolean'
+import { type_string } from '../type/string'
+import { arrayJson_reverse } from '../arrayJson/reverse'
 
 /**
  * 根据字段进行 array 的排序
@@ -15,18 +15,18 @@ import {arrayJson_reverse} from "../arrayJson/reverse"
  * @returns {array|[[],[],...]|[{},{},...]}
  */
 export function array_orderField(array, field, boolean) {
-    const functionName = "array" + "_" + "orderField"
-    arguments.length === 0 && throw_empty(functionName, "array")
-    type_array(array) || throw_type(functionName, "array", "array")
-    arguments.length === 1 && throw_empty(functionName, "field")
-    type_string(field) || throw_type(functionName, "field", "number|string")
-    arguments.length === 2 && throw_empty(functionName, "boolean")
-    type_boolean(boolean) || throw_type(functionName, "boolean", "boolean")
-    // 开始处理
-    const result = array.sort(function (a, b) {
-        const x = a[field]
-        const y = b[field]
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0))
-    })
-    return boolean ? result : arrayJson_reverse(result)
+  const functionName = 'array' + '_' + 'orderField'
+  arguments.length === 0 && throw_empty(functionName, 'array')
+  type_array(array) || throw_type(functionName, 'array', 'array')
+  arguments.length === 1 && throw_empty(functionName, 'field')
+  type_string(field) || throw_type(functionName, 'field', 'number|string')
+  arguments.length === 2 && throw_empty(functionName, 'boolean')
+  type_boolean(boolean) || throw_type(functionName, 'boolean', 'boolean')
+  // 开始处理
+  const result = array.sort(function (a, b) {
+    const x = a[field]
+    const y = b[field]
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0))
+  })
+  return boolean ? result : arrayJson_reverse(result)
 }

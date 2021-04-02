@@ -3,5 +3,5 @@
  * @returns {string}
  */
 export function some_maxZIndex() {
-    return (new Date().getTime() / 1000).toFixed(0)
+  return (new Date().getTime() / 1000).toFixed(0)
 }

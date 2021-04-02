@@ -3,5 +3,5 @@
  * @return {string}
  */
 export function addressBar_host() {
-    return location.host
+  return location.host
 }

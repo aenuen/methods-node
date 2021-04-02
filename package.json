@@ -1,6 +1,6 @@
 {
   "name": "methods-node",
-  "version": "1.0.50",
+  "version": "1.0.56",
   "description": "methods",
   "main": "index.min.js",
   "directories": {
@@ -22,6 +22,5 @@
     "url": "https://github.com/aenuen/make-node/issues"
   },
   "homepage": "https://github.com/aenuen/make-node#readme",
-  "dependencies": {
-  }
+  "dependencies": {}
 }

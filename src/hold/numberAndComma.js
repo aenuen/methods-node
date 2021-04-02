@@ -1,6 +1,6 @@
-import {throw_empty} from "../throw/empty"
-import {throw_type} from "../throw/type"
-import {type_string} from "../type/string"
+import { throw_empty } from '../throw/empty'
+import { throw_type } from '../throw/type'
+import { type_string } from '../type/string'
 
 /**
  * 字符串中保留数字和逗号
@@ -8,9 +8,9 @@ import {type_string} from "../type/string"
  * @returns {string}
  */
 export function hold_numberAndComma(string) {
-    const functionName = "hold" + "_" + "numberAndComma"
-    arguments.length === 0 && throw_empty(functionName, "string")
-    type_string(string) || throw_type(functionName, "string", "string")
-    // 开始处理
-    return string.toString().replace(/[^\d,]/g, "")
+  const functionName = 'hold' + '_' + 'numberAndComma'
+  arguments.length === 0 && throw_empty(functionName, 'string')
+  type_string(string) || throw_type(functionName, 'string', 'string')
+  // 开始处理
+  return string.toString().replace(/[^\d,]/g, '')
 }

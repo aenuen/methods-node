@@ -1,4 +1,4 @@
-import {throw_empty} from "../throw/empty"
+import { throw_empty } from '../throw/empty'
 
 /**
  * 是否正则表达式类型
@@ -6,7 +6,7 @@ import {throw_empty} from "../throw/empty"
  * @returns {boolean}
  */
 export function type_regexp(value) {
-    const functionName = "type" + "_" + "regexp"
-    arguments.length === 0 && throw_empty(functionName, "value")
-    return Object.prototype.toString.call(value).toLowerCase() === "[object regexp]"
+  const functionName = 'type' + '_' + 'regexp'
+  arguments.length === 0 && throw_empty(functionName, 'value')
+  return Object.prototype.toString.call(value).toLowerCase() === '[object regexp]'
 }

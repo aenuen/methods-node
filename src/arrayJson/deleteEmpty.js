@@ -1,8 +1,8 @@
-import {throw_empty} from "../throw/empty"
-import {throw_type} from "../throw/type"
-import {type_array} from "../type/array"
-import {type_json} from "../type/json"
-import {arrayJson_whetherIn} from "./whetherIn"
+import { throw_empty } from '../throw/empty'
+import { throw_type } from '../throw/type'
+import { type_array } from '../type/array'
+import { type_json } from '../type/json'
+import { arrayJson_whetherIn } from './whetherIn'
 
 /**
  * 删除 arrayJson 中的 empty 值
@@ -11,17 +11,17 @@ import {arrayJson_whetherIn} from "./whetherIn"
  * @returns {[]|[]}
  */
 export function arrayJson_deleteEmpty(arrayJson, other) {
-    const functionName = "arrayJson" + "_" + "deleteEmpty"
-    arguments.length === 0 && throw_empty(functionName, "arrayJson")
-    const typeArray = type_array(arrayJson), typeJson = type_json(arrayJson)
-    typeArray || typeJson || throw_type(functionName, "arrayJson", "array|json")
-    arguments.length === 1 && throw_empty(functionName, "other")
-    type_array(other) || throw_type(functionName, "other", "array")
-    // 开始处理
-    const result = typeArray ? [] : {}
-    Object.keys(arrayJson).forEach((key) => {
-        const value = arrayJson[key]
-        value === "" || arrayJson_whetherIn(other, value, false) || (typeArray ? result.push(value) : result[key] = value)
-    })
-    return result
+  const functionName = 'arrayJson' + '_' + 'deleteEmpty'
+  arguments.length === 0 && throw_empty(functionName, 'arrayJson')
+  const typeArray = type_array(arrayJson), typeJson = type_json(arrayJson)
+  typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')
+  arguments.length === 1 && throw_empty(functionName, 'other')
+  type_array(other) || throw_type(functionName, 'other', 'array')
+  // 开始处理
+  const result = typeArray ? [] : {}
+  Object.keys(arrayJson).forEach((key) => {
+    const value = arrayJson[key]
+    value === '' || arrayJson_whetherIn(other, value, false) || (typeArray ? result.push(value) : result[key] = value)
+  })
+  return result
 }
