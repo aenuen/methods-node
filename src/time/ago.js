@@ -9,8 +9,8 @@ import { time_format } from './format'
 /**
  * 获取多少时间以前
  * @param value
- * @param {"{y}-{m}-{d} {h}:{i}:{s} 星期{w}"} format
  * @param {boolean} zero
+ * @param {"{y}-{m}-{d} {h}:{i}:{s} 星期{w}"} format
  * @returns {string}
  */
 export function time_ago(value, format, zero) {
