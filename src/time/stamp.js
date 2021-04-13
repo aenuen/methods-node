@@ -8,7 +8,7 @@ import { time_object } from './object'
  * @param value
  * @returns {string}
  */
-export function stamp(value) {
+export function time_stamp(value) {
   const functionName = 'time' + '_' + 'stamp'
   arguments.length === 0 && throw_empty(functionName, 'value')
   // 开始处理
