@@ -26,8 +26,8 @@ export function time_agoEn(value, format, zero) {
   // 开始处理
   const thisTimestamp = ~~(Date.now() / 1000) // 当前的时间戳（14位）
   const diff = thisTimestamp - timeTimestamp
-  return diff < 3600 ? time_pluralize(~~(between / 60), ' minute') :
-    diff < 86400 ? time_pluralize(~~(between / 3600), ' hour') :
-      diff < 691200 ? time_pluralize(~~(between / 86400), ' day') :
+  return diff < 3600 ? time_pluralize(~~(diff / 60), ' minute') :
+    diff < 86400 ? time_pluralize(~~(diff / 3600), ' hour') :
+      diff < 691200 ? time_pluralize(~~(diff / 86400), ' day') :
         time_format(value, format, zero)
 }
