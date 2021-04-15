@@ -7,7 +7,7 @@ import { time_stamp } from './stamp'
 import { time_format } from './format'
 
 /**
- * 多少时间内（中文）（~~转数字型，保留整数）
+ * 多少时间前（中文）（~~转数字型，保留整数）
  * @param value
  * @param {boolean} zero
  * @param {"{y}-{m}-{d} {h}:{i}:{s} 星期{w}"} format

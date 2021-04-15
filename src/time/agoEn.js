@@ -4,11 +4,11 @@ import { type_boolean } from '../type/boolean'
 import { type_number } from '../type/number'
 import { type_string } from '../type/string'
 import { time_format } from './format'
-import { time_pluralize } from './pluralize'
+import { some_pluralize } from '../some/pluralize'
 import { time_stamp } from './stamp'
 
 /**
- * 多少时间内（英文）（~~转数字型，保留整数）
+ * 多少时间前（英文）（~~转数字型，保留整数）
  * @param value
  * @param {boolean} zero
  * @param {"{y}-{m}-{d} {h}:{i}:{s} 星期{w}"} format
@@ -27,8 +27,8 @@ export function time_agoEn(value, format, zero) {
   const thisTimestamp = ~~(Date.now() / 1000) // 当前的时间戳（14位）
   const diff = thisTimestamp - timeTimestamp
   return diff < 60 ? 'now' :
-    diff < 3600 ? time_pluralize(~~(diff / 60), ' minute') :
-      diff < 86400 ? time_pluralize(~~(diff / 3600), ' hour') :
-        diff < 691200 ? time_pluralize(~~(diff / 86400), ' day') :
+    diff < 3600 ? some_pluralize(~~(diff / 60), ' minute') :
+      diff < 86400 ? some_pluralize(~~(diff / 3600), ' hour') :
+        diff < 691200 ? some_pluralize(~~(diff / 86400), ' day') :
           time_format(value, format, zero)
 }
