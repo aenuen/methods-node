@@ -12,7 +12,7 @@ import { date_year } from './year'
  * @param value
  * @returns {array}
  */
-export function data_prevMonth(value) {
+export function date_prevMonth(value) {
   const functionName = 'date' + '_' + 'prevMonth'
   arguments.length === 0 && throw_empty(functionName, 'value')
   const timeObject = time_object(value)
