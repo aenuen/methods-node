@@ -18,5 +18,5 @@ export function replace_one(string, search, replace) {
   arguments.length === 2 && throw_empty(functionName, 'replace')
   type_string(replace) || throw_type(functionName, 'replace', 'string')
   // 开始处理
-  return string.toString().replace(search.toString(), replace.toString)
+  return string.toString().replace(search.toString(), replace.toString())
 }

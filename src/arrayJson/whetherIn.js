@@ -25,7 +25,7 @@ export function arrayJson_whetherIn(arrayJson, value, boolean) {
   return newArray.some((key) => {
     let a = JSON.stringify(typeof key === 'number' ? '' + key : key)
     let b = JSON.stringify(typeof value === 'number' ? '' + value : value)
-    boolean === false && ((function () {
+    boolean === false && ((function() {
       a = a.toLowerCase()
       b = b.toLowerCase()
     })())

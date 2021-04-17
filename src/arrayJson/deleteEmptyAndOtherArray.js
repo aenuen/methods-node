@@ -10,8 +10,8 @@ import { arrayJson_whetherIn } from './whetherIn'
  * @param {[]|*} other 现在仅设置为不等于空字符，其它条件可额外增加，如：[null,undefined]
  * @returns {[]|[]}
  */
-export function arrayJson_deleteEmpty(arrayJson, other) {
-  const functionName = 'arrayJson' + '_' + 'deleteEmpty'
+export function arrayJson_deleteEmptyAndOtherArray(arrayJson, other) {
+  const functionName = 'arrayJson' + '_' + 'deleteEmptyAndOtherArray'
   arguments.length === 0 && throw_empty(functionName, 'arrayJson')
   const typeArray = type_array(arrayJson), typeJson = type_json(arrayJson)
   typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')

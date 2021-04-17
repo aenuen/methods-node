@@ -8,23 +8,23 @@ import { arrayJson_whetherIn } from './whetherIn'
 /**
  * 保留 arrayJson 中指定 holdKey 值
  * @param {[]|{}} arrayJson
- * @param {[]} holdKey
+ * @param {[]} holdKeyArray
  * @returns {[]|{}}
  */
-export function arrayJson_holdAssignKey(arrayJson, holdKey) {
+export function arrayJson_holdAssignKeyArray(arrayJson, holdKeyArray) {
   const functionName = 'arrayJson' + '_' + 'holdAssignKey'
   arguments.length === 0 && throw_empty(functionName, 'arrayJson')
   const typeArray = type_array(arrayJson), typeJson = type_json(arrayJson)
   typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')
-  arguments.length === 1 && throw_empty(functionName, 'holdKey')
-  type_array(holdKey) || throw_type(functionName, 'holdKey', 'array')
+  arguments.length === 1 && throw_empty(functionName, 'holdKeyArray')
+  type_array(holdKeyArray) || throw_type(functionName, 'holdKeyArray', 'array')
   // 开始处理
   const keyArray = arrayJson_keyName(arrayJson)
-  let result = typeArray ? [] : {}
-  Object.keys(holdKey).forEach((key) => {
-    arrayJson_whetherIn(keyArray, holdKey[key], false) && (
-      typeArray ? result.push(arrayJson[holdKey[key]]) : result[holdKey[key]] = arrayJson[holdKey[key]]
+  let nAoJ = typeArray ? [] : {}
+  Object.keys(holdKeyArray).forEach((key) => {
+    arrayJson_whetherIn(keyArray, holdKeyArray[key], false) && (
+      typeArray ? nAoJ.push(arrayJson[holdKeyArray[key]]) : nAoJ[holdKeyArray[key]] = arrayJson[holdKeyArray[key]]
     )
   })
-  return result
+  return nAoJ
 }

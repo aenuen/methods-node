@@ -16,5 +16,6 @@ export function number_addZero(number, length) {
   number = parseInt(number)
   length = parseInt(length)
   const diff = length - number.toString().length
-  return diff > 0 ? Array(diff).join('0') + number : number.toString()
+  const string = string_loop('0', diff)
+  return string + number
 }

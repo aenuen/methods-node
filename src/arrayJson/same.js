@@ -4,9 +4,9 @@ import { type_array } from '../type/array'
 import { type_boolean } from '../type/boolean'
 import { type_json } from '../type/json'
 import { type_string } from '../type/string'
-import { arrayJson_deleteAssignKey } from './deleteAssignKey'
-import { arrayJson_holdAssignKey } from './holdAssignKey'
-import { arrayJson_repeat } from './repeat'
+import { arrayJson_deleteAssignKeyArray } from './deleteAssignKeyArray'
+import { arrayJson_holdAssignKeyArray } from './holdAssignKeyArray'
+import { arrayJson_repeatBooleanNull } from './repeatBooleanNull'
 import { arrayJson_resetKeyOne } from './resetKeyOne'
 
 /**
@@ -33,15 +33,16 @@ export function arrayJson_same(arrayJson, assignArray, keyName, boolean) {
   array.push(keyName)
   let oneArray = typeArray ? [] : {}
   Object.keys(arrayJson).forEach((key) => {
-    oneArray[key] = arrayJson_holdAssignKey(arrayJson[key], array)
+    oneArray[key] = arrayJson_holdAssignKeyArray(arrayJson[key], array)
   })
   let twoArray = typeArray ? [] : {}
   Object.keys(oneArray).forEach((key) => {
-    twoArray[key] = arrayJson_deleteAssignKey(oneArray[key], [keyName])
+    twoArray[key] = arrayJson_deleteAssignKeyArray(oneArray[key], [keyName])
   })
-  const threeArray = boolean ? arrayJson_repeat(twoArray, true) : arrayJson_repeat(twoArray, false)
+  const threeArray = boolean ?
+    arrayJson_repeatBooleanNull(twoArray, true) :
+    arrayJson_repeatBooleanNull(twoArray, false)
   let result = []
-  console.log(threeArray)
   Object.keys(threeArray).forEach(key => {
     result.push(arrayJson[threeArray[key]][keyName])
   })
