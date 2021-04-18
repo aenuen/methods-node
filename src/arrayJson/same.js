@@ -47,32 +47,9 @@ export function arrayJson_same(arrayJson, assignArray, keyName, boolean) {
     arrayJson_repeatTwoOption(twoArray, 2)
   let result = []
   for (let three in threeArray) {
-    for (threeArray.hasOwnProperty(three)) {
+    if (threeArray.hasOwnProperty(three)) {
       result.push(arrayJson[three][keyName])
     }
   }
   return result
-}
-
-
-function arrayJson_same(e, r, a, t) {
-  var y = "arrayJson_same";
-  0 === arguments.length && throw_empty(y, "arrayJson");
-  var o = type_array(e), n = type_json(e);
-  o || n || throw_type(y, "arrayJson", "array|json"), 1 === arguments.length && throw_empty(y, "assignArray"), type_array(r) || throw_type(y, "assignArray", "array"), 2 === arguments.length && throw_empty(y, "keyName"), type_string(a) || throw_type(y, "keyName", "number|string"), 3 === arguments.length && throw_empty(y, "boolean"), type_boolean(t) || throw_type(y, "boolean", "boolean");
-  const s = arrayJson_resetKeyOne(r);
-  s.push(a);
-  let _ = o ? [] : {};
-  Object.keys(e).forEach(r => {
-    _[r] = arrayJson_holdAssignKeyArray(e[r], s)
-  });
-  let p = o ? [] : {};
-  Object.keys(_).forEach(r => {
-    p[r] = arrayJson_deleteAssignKeyArray(_[r], [a])
-  });
-  o = t ? arrayJson_repeatTwoOption(p, 1) : arrayJson_repeatTwoOption(p, 2);
-  let h = [];
-  return Object.keys(o).forEach(r => {
-    h.push(e[r][a])
-  }), h
 }
