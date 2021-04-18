@@ -6,7 +6,7 @@ import { type_json } from '../type/json'
 import { type_string } from '../type/string'
 import { arrayJson_deleteAssignKeyArray } from './deleteAssignKeyArray'
 import { arrayJson_holdAssignKeyArray } from './holdAssignKeyArray'
-import { arrayJson_repeatBooleanNull } from './repeatBooleanNull'
+import { arrayJson_repeatBooleanNull } from './repeatTwoOption'
 import { arrayJson_resetKeyOne } from './resetKeyOne'
 
 /**

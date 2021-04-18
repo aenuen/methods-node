@@ -15,8 +15,6 @@ export function arrayJson_keyName(arrayJson) {
   typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')
   // 开始处理
   let result = []
-  Object.keys(arrayJson).forEach((key, index, _ary) => {
-    result = _ary
-  })
+  Object.keys(arrayJson).forEach((key, index) => result.push(index))
   return result
 }

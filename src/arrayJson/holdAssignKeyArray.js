@@ -6,7 +6,7 @@ import { arrayJson_keyName } from './keyName'
 import { arrayJson_whetherIn } from './whetherIn'
 
 /**
- * 保留 arrayJson 中指定 holdKey 值
+ * 保留 arrayJson 中指定 holdKeyArray 值
  * @param {[]|{}} arrayJson
  * @param {[]} holdKeyArray
  * @returns {[]|{}}

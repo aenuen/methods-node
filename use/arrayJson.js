@@ -46,10 +46,16 @@ export function _arrayJson_random(arrayJson, number) {
   return arrayJson_random(arrayJson, number)
 }
 
-import { arrayJson_repeatBooleanNull } from '../src/arrayJson/repeatBooleanNull'
+import { arrayJson_repeatOneOption } from '../src/arrayJson/repeatOneOption'
 
-export function _arrayJson_repeatBooleanNull(arrayJson, booleanNull) {
-  return arrayJson_repeatBooleanNull(arrayJson, booleanNull)
+export function _arrayJson_repeatOneOption(arrayJson, int) {
+  return arrayJson_repeatOneOption(arrayJson, int)
+}
+
+import { arrayJson_repeatTwoOption } from '../src/arrayJson/repeatTwoOption'
+
+export function _arrayJson_repeatTwoOption(arrayJson, booleanNull) {
+  return arrayJson_repeatTwoOption(arrayJson, booleanNull)
 }
 
 import { arrayJson_resetKeyAll } from '../src/arrayJson/resetKeyAll'
