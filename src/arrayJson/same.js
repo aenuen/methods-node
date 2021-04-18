@@ -6,7 +6,7 @@ import { type_json } from '../type/json'
 import { type_string } from '../type/string'
 import { arrayJson_deleteAssignKeyArray } from './deleteAssignKeyArray'
 import { arrayJson_holdAssignKeyArray } from './holdAssignKeyArray'
-import { arrayJson_repeatBooleanNull } from './repeatTwoOption'
+import { arrayJson_repeatTwoOption } from './repeatTwoOption'
 import { arrayJson_resetKeyOne } from './resetKeyOne'
 
 /**
@@ -32,19 +32,47 @@ export function arrayJson_same(arrayJson, assignArray, keyName, boolean) {
   const array = arrayJson_resetKeyOne(assignArray)
   array.push(keyName)
   let oneArray = typeArray ? [] : {}
-  Object.keys(arrayJson).forEach((key) => {
-    oneArray[key] = arrayJson_holdAssignKeyArray(arrayJson[key], array)
-  })
+  for (let one in arrayJson) {
+    if (arrayJson.hasOwnProperty(one)) {
+      oneArray[one] = arrayJson_holdAssignKeyArray(arrayJson[one], array)
+    }
+  }
   let twoArray = typeArray ? [] : {}
-  Object.keys(oneArray).forEach((key) => {
-    twoArray[key] = arrayJson_deleteAssignKeyArray(oneArray[key], [keyName])
-  })
-  const threeArray = boolean ?
-    arrayJson_repeatBooleanNull(twoArray, true) :
-    arrayJson_repeatBooleanNull(twoArray, false)
+  for (let two in oneArray) {
+    if (oneArray.hasOwnProperty(two)) {
+      twoArray[two] = arrayJson_deleteAssignKeyArray(oneArray[two], [keyName])
+    }
+  }
+  const threeArray = boolean ? arrayJson_repeatTwoOption(twoArray, 1) :
+    arrayJson_repeatTwoOption(twoArray, 2)
   let result = []
-  Object.keys(threeArray).forEach(key => {
-    result.push(arrayJson[threeArray[key]][keyName])
-  })
+  for (let three in threeArray) {
+    for (threeArray.hasOwnProperty(three)) {
+      result.push(arrayJson[three][keyName])
+    }
+  }
   return result
+}
+
+
+function arrayJson_same(e, r, a, t) {
+  var y = "arrayJson_same";
+  0 === arguments.length && throw_empty(y, "arrayJson");
+  var o = type_array(e), n = type_json(e);
+  o || n || throw_type(y, "arrayJson", "array|json"), 1 === arguments.length && throw_empty(y, "assignArray"), type_array(r) || throw_type(y, "assignArray", "array"), 2 === arguments.length && throw_empty(y, "keyName"), type_string(a) || throw_type(y, "keyName", "number|string"), 3 === arguments.length && throw_empty(y, "boolean"), type_boolean(t) || throw_type(y, "boolean", "boolean");
+  const s = arrayJson_resetKeyOne(r);
+  s.push(a);
+  let _ = o ? [] : {};
+  Object.keys(e).forEach(r => {
+    _[r] = arrayJson_holdAssignKeyArray(e[r], s)
+  });
+  let p = o ? [] : {};
+  Object.keys(_).forEach(r => {
+    p[r] = arrayJson_deleteAssignKeyArray(_[r], [a])
+  });
+  o = t ? arrayJson_repeatTwoOption(p, 1) : arrayJson_repeatTwoOption(p, 2);
+  let h = [];
+  return Object.keys(o).forEach(r => {
+    h.push(e[r][a])
+  }), h
 }

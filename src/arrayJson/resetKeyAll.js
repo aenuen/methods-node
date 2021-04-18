@@ -16,10 +16,12 @@ export function arrayJson_resetKeyAll(arrayJson) {
   // 开始处理
   let count = 0
   let result = []
-  Object.keys(arrayJson).forEach((key) => {
-    result[count] = type_array(arrayJson[key]) || type_json(arrayJson[key]) ?
-      arrayJson_resetKeyAll(arrayJson[key]) : arrayJson[key]
-    count++
-  })
+  for (let key in arrayJson) {
+    if (arrayJson.hasOwnProperty(key)) {
+      result[count] = type_array(arrayJson[key]) ||
+      type_json(arrayJson[key]) ? arrayJson_resetKeyAll(arrayJson[key]) : arrayJson[key]
+      count++
+    }
+  }
   return result
 }

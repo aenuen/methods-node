@@ -18,12 +18,16 @@ export function arrayJson_holdAssignValueArray(arrayJson, holdValueArray) {
   type_array(holdValueArray) || throw_type(functionName, 'holdValueArray', 'array')
   // 开始处理
   let nAoj = typeArray ? [] : {}
-  Object.keys(holdValueArray).forEach((k) => {
-    Object.keys(arrayJson).forEach((key) => {
-      JSON.stringify(holdValueArray[k]) === JSON.stringify(arrayJson[key]) && (
-        typeArray ? nAoj.push(arrayJson[key]) : nAoj[key] = arrayJson[key]
-      )
-    })
-  })
+  for (let k in holdValueArray) {
+    if (holdValueArray.hasOwnProperty(k)) {
+      for (let e in arrayJson) {
+        if (arrayJson.hasOwnProperty(e)) {
+          JSON.stringify(holdValueArray[k]) === JSON.stringify(arrayJson[e]) && (
+            typeArray ? nAoj.push(arrayJson[e]) : nAoj[e] = arrayJson[e]
+          )
+        }
+      }
+    }
+  }
   return nAoj
 }

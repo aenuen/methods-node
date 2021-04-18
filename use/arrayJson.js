@@ -48,14 +48,14 @@ export function _arrayJson_random(arrayJson, number) {
 
 import { arrayJson_repeatOneOption } from '../src/arrayJson/repeatOneOption'
 
-export function _arrayJson_repeatOneOption(arrayJson, int) {
-  return arrayJson_repeatOneOption(arrayJson, int)
+export function _arrayJson_repeatOneOption(arrayJson, option) {
+  return arrayJson_repeatOneOption(arrayJson, option)
 }
 
 import { arrayJson_repeatTwoOption } from '../src/arrayJson/repeatTwoOption'
 
-export function _arrayJson_repeatTwoOption(arrayJson, booleanNull) {
-  return arrayJson_repeatTwoOption(arrayJson, booleanNull)
+export function _arrayJson_repeatTwoOption(arrayJson, option) {
+  return arrayJson_repeatTwoOption(arrayJson, option)
 }
 
 import { arrayJson_resetKeyAll } from '../src/arrayJson/resetKeyAll'

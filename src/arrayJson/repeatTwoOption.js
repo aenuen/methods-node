@@ -9,7 +9,6 @@ import { arrayJson_whetherIn } from './whetherIn'
  * 删除 arrayJson 中的 repeat 值
  * @param {[]|{}} arrayJson
  * @param {int} option 1:不重复值的array|json,2:不重复的键值数组,3:重复的键值数组
- * TA=typeArray,TJ=typeJSON,NAJ=newArrayJSON,
  * @returns {[]|{}}
  */
 export function arrayJson_repeatTwoOption(arrayJson, option) {
@@ -19,15 +18,28 @@ export function arrayJson_repeatTwoOption(arrayJson, option) {
   typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')
   arguments.length === 1 && throw_empty(functionName, 'option')
   type_intPos(option) || throw_type(functionName, 'option', '正整数')
-  option > 0 && option < 4 || throw_type(functionName, 'option', 'int是1到3')
+  option > 0 && option < 4 || throw_type(functionName, 'option', '正整的1到3')
   // 开始处理
-  let repeatValue = typeArray ? [] : {}, noRepeatValueArray = []
-  Object.keys(arrayJson).forEach(key => {
-    if (arrayJson_whetherIn(nAoj, arrayJson[key], true)) {
-      noRepeatValueArray.push(arrayJson[key])
-    } else {
-      typeArray ? noRepeatArray.push(arrayJson[key]) : noRepeatArray[key] = arrayJson[key]
+  let a = [], b = typeArray ? [] : {}
+  for (let key in arrayJson) {
+    if (arrayJson.hasOwnProperty(key)) {
+      if (arrayJson_whetherIn(b, arrayJson[key], true)) {
+        a.push(arrayJson[key])
+      } else {
+        typeArray ? b.push(arrayJson[key]) : b[key] = arrayJson[key]
+      }
     }
-  })
-  console.log(noRepeatValueArray)
+  }
+  let c = typeArray ? [] : {}, d = [], e = []
+  for (let idx in arrayJson) {
+    if (arrayJson.hasOwnProperty(idx)) {
+      if (arrayJson_whetherIn(a, arrayJson[idx], true)) {
+        e.push(idx)
+      } else {
+        d.push(idx)
+        typeArray ? c.push(arrayJson[idx]) : c[idx] = arrayJson[idx]
+      }
+    }
+  }
+  return +option === 1 ? c : (+option === 2 ? d : e)
 }

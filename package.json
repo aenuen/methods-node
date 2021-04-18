@@ -1,6 +1,6 @@
 {
   "name": "methods-node",
-  "version": "1.0.81",
+  "version": "1.0.83",
   "description": "methods",
   "main": "index.min.js",
   "directories": {

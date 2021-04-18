@@ -17,8 +17,10 @@ export function arrayJson_reverse(arrayJson) {
   // 开始处理
   let result = typeArray ? [] : {}, keyArray = arrayJson_keyName(arrayJson)
   keyArray.reverse()
-  Object.keys(keyArray).forEach((key) => {
-    typeArray ? result.push(arrayJson[keyArray[key]]) : result[keyArray[key]] = arrayJson[keyArray[key]]
-  })
+  for (let key in keyArray) {
+    if (keyArray.hasOwnProperty(key)) {
+      typeArray ? result.push(arrayJson[keyArray[key]]) : result[keyArray[key]] = arrayJson[keyArray[key]]
+    }
+  }
   return result
 }

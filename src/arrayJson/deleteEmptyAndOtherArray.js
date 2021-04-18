@@ -19,11 +19,13 @@ export function arrayJson_deleteEmptyAndOtherArray(arrayJson, otherArray) {
   type_array(otherArray) || throw_type(functionName, 'otherArray', 'array')
   // 开始处理
   const result = typeArray ? [] : {}
-  Object.keys(arrayJson).forEach((key) => {
-    const value = arrayJson[key]
-    value === ''
-    || arrayJson_whetherIn(otherArray, value, false)
-    || (typeArray ? result.push(value) : result[key] = value)
-  })
+  for (let key in arrayJson) {
+    if (arrayJson.hasOwnProperty(key)) {
+      const value = arrayJson[key]
+      value === '' ||
+      arrayJson_whetherIn(otherArray, value, false) ||
+      (typeArray ? result.push(value) : result[key] = value)
+    }
+  }
   return result
 }

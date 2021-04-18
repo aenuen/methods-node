@@ -21,10 +21,13 @@ export function arrayJson_holdAssignKeyArray(arrayJson, holdKeyArray) {
   // 开始处理
   const keyArray = arrayJson_keyName(arrayJson)
   let nAoJ = typeArray ? [] : {}
-  Object.keys(holdKeyArray).forEach((key) => {
-    arrayJson_whetherIn(keyArray, holdKeyArray[key], false) && (
-      typeArray ? nAoJ.push(arrayJson[holdKeyArray[key]]) : nAoJ[holdKeyArray[key]] = arrayJson[holdKeyArray[key]]
-    )
-  })
+  for (let key in holdKeyArray) {
+    if (holdKeyArray.hasOwnProperty(key)) {
+      arrayJson_whetherIn(keyArray, holdKeyArray[key], false) && (
+        typeArray ? nAoJ.push(arrayJson[holdKeyArray[key]]) :
+          nAoJ[holdKeyArray[key]] = arrayJson[holdKeyArray[key]]
+      )
+    }
+  }
   return nAoJ
 }

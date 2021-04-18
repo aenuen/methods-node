@@ -15,8 +15,10 @@ export function arrayJson_resetKeyOne(arrayJson) {
   typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')
   // 开始处理
   let result = []
-  Object.keys(arrayJson).forEach((key) => {
-    result.push(arrayJson[key])
-  })
+  for (let key in arrayJson) {
+    if (arrayJson.hasOwnProperty(key)) {
+      result.push(arrayJson[key])
+    }
+  }
   return result
 }
