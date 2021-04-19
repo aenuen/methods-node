@@ -5,7 +5,7 @@ import { type_array } from '../type/array'
 /**
  * 获取 array 的 xy 等比对换
  * @param {array} array [[],[],...]
- * @example array_xyReplace([[1,'a'],[2,'b'],[3,'c'],[4,'d']])
+ * @example _array_xyReplace([[1,'a'],[2,'b'],[3,'c'],[4,'d']])
  * @returns {array}
  */
 export function array_xyReplace(array) {

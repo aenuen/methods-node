@@ -7,7 +7,7 @@ import { arrayJson_whetherIn } from './whetherIn'
 /**
  * 删除 arrayJson 中的 empty 以及 otherArray 的值
  * @param {[]|{}} arrayJson
- * @param {[]|*} otherArray 现在仅设置为不等于空字符，其它条件可额外增加，如：[null,undefined]
+ * @param {[]} otherArray 现在仅设置为不等于空字符，其它条件可额外增加，如：[null,undefined]
  * @returns {[]|[]}
  */
 export function arrayJson_deleteEmptyAndOtherArray(arrayJson, otherArray) {

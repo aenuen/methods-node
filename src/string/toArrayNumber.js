@@ -10,7 +10,7 @@ import { type_string } from '../type/string'
  * @returns {array}
  */
 export function string_toArrayNumber(string, number) {
-  const functionName = 'array' + '_' + 'stringToArrayNumber'
+  const functionName = 'string' + '_' + 'toArrayNumber'
   arguments.length === 0 && throw_empty(functionName, 'string')
   type_string(string) || throw_type(functionName, 'string', 'string')
   arguments.length === 1 && throw_empty(functionName, 'number')

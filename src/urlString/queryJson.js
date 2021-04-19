@@ -8,7 +8,7 @@ import { type_string } from '../type/string'
  * @returns {json}
  */
 export function urlString_queryJson(urlString) {
-  const functionName = 'urlString' + '_' + 'jqueryJson'
+  const functionName = 'urlString' + '_' + 'queryJson'
   arguments.length === 0 && throw_empty(functionName, 'urlString')
   type_string(urlString) || throw_type(functionName, 'urlString', 'string')
   // 开始处理

@@ -78,12 +78,12 @@ export function _arrayJson_reverse(arrayJson) {
 
 import { arrayJson_same } from '../src/arrayJson/same'
 
-export function _arrayJson_same(arrayJson, assignArray, keyName, boolean) {
-  return arrayJson_same(arrayJson, assignArray, keyName, boolean)
+export function _arrayJson_same(arrayJson, assignArray, keyName, same) {
+  return arrayJson_same(arrayJson, assignArray, keyName, same)
 }
 
 import { arrayJson_whetherIn } from '../src/arrayJson/whetherIn'
 
-export function _arrayJson_whetherIn(arrayJson, value, boolean) {
-  return arrayJson_whetherIn(arrayJson, value, boolean)
+export function _arrayJson_whetherIn(arrayJson, value, bigSmallWrite) {
+  return arrayJson_whetherIn(arrayJson, value, bigSmallWrite)
 }

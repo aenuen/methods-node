@@ -1,7 +1,7 @@
 import { throw_empty } from '../throw/empty'
 import { throw_type } from '../throw/type'
 import { type_array } from '../type/array'
-import { type_boolean } from '../type/boolean'
+import { type_same } from '../type/same'
 import { type_json } from '../type/json'
 import { type_string } from '../type/string'
 import { arrayJson_deleteAssignKeyArray } from './deleteAssignKeyArray'
@@ -14,10 +14,10 @@ import { arrayJson_resetKeyOne } from './resetKeyOne'
  * @param {[]|{}} arrayJson
  * @param {[]} assignArray
  * @param {number|string} keyName
- * @param {boolean} boolean
+ * @param {boolean} same
  * @return {[]}
  */
-export function arrayJson_same(arrayJson, assignArray, keyName, boolean) {
+export function arrayJson_same(arrayJson, assignArray, keyName, same) {
   const functionName = 'arrayJson' + '_' + 'same'
   arguments.length === 0 && throw_empty(functionName, 'arrayJson')
   const typeArray = type_array(arrayJson), typeJson = type_json(arrayJson)
@@ -26,8 +26,8 @@ export function arrayJson_same(arrayJson, assignArray, keyName, boolean) {
   type_array(assignArray) || throw_type(functionName, 'assignArray', 'array')
   arguments.length === 2 && throw_empty(functionName, 'keyName')
   type_string(keyName) || throw_type(functionName, 'keyName', 'number|string')
-  arguments.length === 3 && throw_empty(functionName, 'boolean')
-  type_boolean(boolean) || throw_type(functionName, 'boolean', 'boolean')
+  arguments.length === 3 && throw_empty(functionName, 'same')
+  type_same(same) || throw_type(functionName, 'same', 'same')
   // 开始处理
   const array = arrayJson_resetKeyOne(assignArray)
   array.push(keyName)
@@ -43,7 +43,7 @@ export function arrayJson_same(arrayJson, assignArray, keyName, boolean) {
       twoArray[two] = arrayJson_deleteAssignKeyArray(oneArray[two], [keyName])
     }
   }
-  const threeArray = boolean ? arrayJson_repeatTwoOption(twoArray, 1) :
+  const threeArray = same ? arrayJson_repeatTwoOption(twoArray, 1) :
     arrayJson_repeatTwoOption(twoArray, 2)
   let result = []
   for (let three in threeArray) {
