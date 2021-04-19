@@ -4,7 +4,7 @@ import { browser_userAgent } from './userAgent'
  * 浏览器信息数组
  * @returns {{edge: boolean, opera: boolean, weiXin: boolean, safari: boolean, chrome: boolean, android: boolean, firefox: boolean, ipad: boolean, ie: boolean, iphone: boolean}}
  */
-export function browser_infoArray() {
+export function browser_infoJson() {
   const userAgent = browser_userAgent()
   return {
     'android': userAgent.indexOf('android'.toLowerCase()) >= 0,

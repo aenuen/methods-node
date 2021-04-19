@@ -10,7 +10,8 @@ import { date_oneMonth } from '../src/date/oneMonth'
 import { date_oneWeek } from '../src/date/oneWeek'
 import { date_prevMonth } from '../src/date/prevMonth'
 import { date_today } from '../src/date/today'
-import { date_week } from '../src/date/week'
+import { date_weekCn } from '../src/date/weekCn'
+import { date_weekEn } from '../src/date/weekEn'
 import { date_weekSunday } from '../src/date/weekSunday'
 import { date_year } from '../src/date/year'
 
@@ -62,8 +63,12 @@ export function _date_today() {
   return date_today()
 }
 
-export function _date_week(value) {
-  return date_week(value)
+export function _date_weekCn(value) {
+  return date_weekCn(value)
+}
+
+export function _date_weekEn(value) {
+  return date_weekEn(value)
 }
 
 export function _date_weekSunday(value) {

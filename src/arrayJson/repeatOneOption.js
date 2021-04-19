@@ -18,7 +18,7 @@ export function arrayJson_repeatOneOption(arrayJson, option) {
   typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')
   arguments.length === 1 && throw_empty(functionName, 'option')
   type_intPos(option) || throw_type(functionName, 'option', '正整数')
-  option > 0 && option < 4 || throw_type(functionName, 'option', '正整的1到3')
+  option >= 1 && option <= 3 || throw_type(functionName, 'option', '1到3的正整数')
   // 开始处理
   let a = typeArray ? [] : {}, b = [], c = []
   for (let key in arrayJson) {

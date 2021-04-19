@@ -18,7 +18,7 @@ export function array_order(array, order) {
   type_boolean(order) || throw_type(functionName, 'order', 'boolean')
   // 开始处理
   let ary = [...array]
-  ary.sort(function (a, b) {
+  ary.sort(function(a, b) {
     a = type_number(a) ? +a : a
     b = type_number(b) ? +b : b
     return a > b ? 1 : -1

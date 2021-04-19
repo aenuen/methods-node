@@ -17,8 +17,6 @@ export function replace_json(string, json) {
   arguments.length === 1 && throw_empty(functionName, 'json')
   type_json(json) || throw_type(functionName, 'json', 'json')
   // 开始处理
-  Object.keys(json).forEach(key => {
-    string = replace_all(string, key, json[key])
-  })
+  Object.keys(json).forEach(key => string = replace_all(string, key, json[key]))
   return string
 }

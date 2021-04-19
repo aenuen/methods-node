@@ -23,18 +23,18 @@ export function array_diKaErJi() {
     n[r].length === 0 && throw_empty(functionName, t + 1 + '的数组')
   })
   // 开始处理
-  const a = function (r, t) {
+  const a = function(r, t) {
     r = !(r instanceof Array) ? [r] : r
     let e = (r).slice(0)
     return e.push(t), e
   }
-  return function (e) {
+  return function(e) {
     const n = e.length
     if (0 === n) return []
     if (1 === n) return e[0]
     {
       let t = e[0]
-      for (let r = 1; r < n; r++) t = function (e, n) {
+      for (let r = 1; r < n; r++) t = function(e, n) {
         let l = []
         for (let t = 0; t < e.length; t++) for (let r = 0; r < n.length; r++) l.push(a(e[t], n[r]))
         return l

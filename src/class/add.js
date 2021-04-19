@@ -16,7 +16,7 @@ export function class_add(HTMLElement, className) {
   arguments.length === 1 && throw_empty(functionName, 'className')
   type_string(className) || throw_type(functionName, 'className', 'string')
   // 开始处理
-  class_has(HTMLElement, className) || ((function () {
+  class_has(HTMLElement, className) || ((function() {
     const string = HTMLElement.className
     const classNew = string + ' ' + className
     HTMLElement.className = string.length > 0 ? classNew : className

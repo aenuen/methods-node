@@ -13,6 +13,5 @@ export function some_februaryDays(year) {
   arguments.length === 0 && throw_empty(functionName, 'year')
   type_number(year) || throw_type(functionName, 'year', 'number')
   // 开始处理
-  year = parseInt(year)
-  return some_whetherLeapYear(year) ? 29 : 28
+  return some_whetherLeapYear(+parseInt(year.toString())) ? 29 : 28
 }

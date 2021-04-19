@@ -15,6 +15,6 @@ export function arrayJson_keyName(arrayJson) {
   typeArray || typeJson || throw_type(functionName, 'arrayJson', 'array|json')
   // 开始处理
   let result = []
-  for (let key in arrayJson) iarrayJson.hasOwnProperty(key) && result.push(key)
+  for (let key in arrayJson) arrayJson.hasOwnProperty(key) && result.push(key)
   return result
 }

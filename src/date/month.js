@@ -13,5 +13,5 @@ export function date_month(value) {
   const timeArray = time_array(value)
   timeArray === null && throw_type(functionName, 'value', '有效的时间')
   // 开始处理
-  return timeArray['m'] > 9 ? timeArray['m'] : '0' + timeArray['m']
+  return timeArray['m'].toString().padStart(2, '0')
 }

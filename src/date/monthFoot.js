@@ -16,7 +16,7 @@ export function date_monthFoot(value) {
   // 开始处理
   const year = timeObject.getFullYear()
   let month = timeObject.getMonth() + 1
-  month = month > 9 ? month : '0' + month
-  const date = new Date(year, month, 0).getDate()
-  return year + '-' + month + '-' + date
+  month = (month + '').padStart(2, '0')
+  let date = new Date(+year, +month, 0).getDate()
+  return `${year}-${month}-${date}`
 }

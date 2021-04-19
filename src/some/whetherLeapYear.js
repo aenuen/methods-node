@@ -12,6 +12,6 @@ export function some_whetherLeapYear(year) {
   arguments.length === 0 && throw_empty(functionName, 'year')
   type_number(year) || throw_type(functionName, 'year', 'number')
   // 开始处理
-  year = parseInt(year)
+  year = +parseInt(year.toString())
   return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0
 }

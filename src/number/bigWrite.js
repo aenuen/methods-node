@@ -18,13 +18,13 @@ export function number_priceBigWrite(number) {
     head = number < 0 ? '欠' : ''
   number = Math.abs(number)
   let string = ''
-  for (var i = 0; i < fraction.length; i++) {
+  for (let i = 0; i < fraction.length; i++) {
     string += (digit[Math.floor(number * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '')
   }
   string = string || '整'
   number = Math.floor(number)
   for (let i = 0; i < unit[0].length && number > 0; i++) {
-    var dot = ''
+    let dot = ''
     for (let j = 0; j < unit[1].length && number > 0; j++) {
       dot = digit[number % 10] + unit[1][j] + dot
       number = Math.floor(number / 10)

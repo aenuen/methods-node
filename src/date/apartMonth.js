@@ -22,7 +22,7 @@ export function date_apartMonth(value, number) {
   array.push(y + '-' + ('0' + m).substr(-2))
   for (let i = 0; i < +number; i++) {
     m--
-    m <= 0 && ((function () {
+    m <= 0 && ((function() {
       y -= 1
       m = 12
     })())

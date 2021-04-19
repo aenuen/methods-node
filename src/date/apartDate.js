@@ -4,6 +4,7 @@ import { type_date } from '../type/date'
 import { type_number } from '../type/number'
 import { time_format } from '../time/format'
 import { time_object } from '../time/object'
+import { time_text_date } from '../time/text'
 
 /**
  * 获取日期 number 天后(前)的日期，正数为后，负数为前
@@ -19,5 +20,5 @@ export function date_apartDate(value, number) {
   arguments.length === 1 && throw_empty(functionName, 'number')
   type_number(number) || throw_type(functionName, 'number', 'number')
   // 开始处理
-  return time_format(+timeObject + number * 1000 * 24 * 60 * 60, '{y}-{m}-{d}', true)
+  return time_format(+timeObject + number * 1000 * 24 * 60 * 60, time_text_date, true)
 }

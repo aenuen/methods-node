@@ -19,8 +19,6 @@ export function string_loop(string, number) {
   string = string.toString()
   number = parseInt(number)
   let result = ''
-  for (let i = 0; i < number; i++) {
-    result += string
-  }
+  for (let i = 0; i < number; i++) result += string
   return result
 }

@@ -18,8 +18,8 @@ export function time_secondShow(seconds) {
   seconds = parseInt((seconds % 60).toString())
   minutes > 59 && (hours = parseInt((minutes / 60).toString()))
   minutes = parseInt((minutes % 60).toString())
-  seconds < 10 && (seconds = '0' + seconds)
-  minutes < 10 && (minutes = '0' + minutes)
-  hours < 10 && (hours = '0' + hours)
+  seconds = (seconds + '').padStart(2, '0')
+  minutes = (minutes + '').padStart(2, '0')
+  hours = (hours + '').padStart(2, '0')
   return `${hours}:${minutes}:${seconds}`
 }

@@ -23,10 +23,10 @@ export function array_orderField(array, field, boolean) {
   arguments.length === 2 && throw_empty(functionName, 'boolean')
   type_boolean(boolean) || throw_type(functionName, 'boolean', 'boolean')
   // 开始处理
-  const result = array.sort(function (a, b) {
+  const result = array.sort(function(a, b) {
     const x = a[field]
     const y = b[field]
-    return ((x < y) ? -1 : ((x > y) ? 1 : 0))
+    return x < y ? -1 : x > y ? 1 : 0
   })
   return boolean ? result : arrayJson_reverse(result)
 }

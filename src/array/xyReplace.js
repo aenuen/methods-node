@@ -23,10 +23,7 @@ export function array_xyReplace(array) {
   for (let o = 0; o < length; o++) count < array[o].length && (count = array[o].length)
   for (let t = 0; t < count; t++) {
     let newArray = []
-    for (let i = 0; i < length; i++) {
-      array[i][t] === undefined && (array[i][t] = '')
-      newArray.push(array[i][t])
-    }
+    for (let i = 0; i < length; i++) array[i][t] === void 0 && (array[i][t] = ''), newArray.push(array[i][t])
     result.push(newArray)
   }
   return result

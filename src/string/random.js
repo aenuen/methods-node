@@ -15,8 +15,6 @@ export function string_random(number) {
   number = parseInt(number)
   number = Math.abs(number)
   let string = ''
-  for (let i = 0; i < number; i++) {
-    string += Math.random().toString(36).substr(2)
-  }
+  for (let i = 0; i < number; i++) string += Math.random().toString(36).substr(2)
   return string.substr(0, number)
 }

@@ -1,11 +1,11 @@
-import { browser_infoArray } from '../src/browser/infoArray'
+import { browser_infoJson } from '../src/browser/infoJson'
 import { browser_userAgent } from '../src/browser/userAgent'
 import { browser_whetherIn } from '../src/browser/whetherIn'
 import { browser_whetherMobile } from '../src/browser/whetherMobile'
 import { browser_whetherPc } from '../src/browser/whetherPc'
 
-export function _browser_infoArray() {
-  return browser_infoArray()
+export function _browser_infoJson() {
+  return browser_infoJson()
 }
 
 export function _browser_userAgent() {

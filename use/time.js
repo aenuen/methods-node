@@ -9,8 +9,9 @@ import { time_short } from '../src/time/short'
 import { time_stamp } from '../src/time/stamp'
 import {
   time_text_date,
-  time_text_full,
+  time_text_datetime,
   time_text_hour,
+  time_text_monthHead,
   time_text_time,
   time_text_week
 } from '../src/time/text'
@@ -52,7 +53,8 @@ export function _time_stamp(value) {
 }
 
 export const _time_text_date = time_text_date
-export const _time_text_full = time_text_full
+export const _time_text_datetime = time_text_datetime
 export const _time_text_hour = time_text_hour
+export const _time_text_monthHead = time_text_monthHead
 export const _time_text_time = time_text_time
 export const _time_text_week = time_text_week

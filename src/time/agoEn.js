@@ -3,8 +3,8 @@ import { throw_type } from '../throw/type'
 import { type_boolean } from '../type/boolean'
 import { type_number } from '../type/number'
 import { type_string } from '../type/string'
-import { time_format } from './format'
 import { some_pluralize } from '../some/pluralize'
+import { time_format } from './format'
 import { time_stamp } from './stamp'
 
 /**

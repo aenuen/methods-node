@@ -13,5 +13,5 @@ export function date_day(value) {
   const timeArray = time_array(value)
   timeArray === null && throw_type(functionName, 'value', '有效的时间')
   // 开始处理
-  return timeArray['d'] > 9 ? timeArray['d'] : '0' + timeArray['d']
+  return timeArray['d'].toString().padStart(2, '0')
 }
