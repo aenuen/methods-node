@@ -1,7 +1,7 @@
 import { throw_empty } from '../throw/empty'
 import { throw_type } from '../throw/type'
 import { type_array } from '../type/array'
-import { type_order } from '../type/order'
+import { type_boolean } from '../type/boolean'
 import { type_string } from '../type/string'
 import { arrayJson_reverse } from '../arrayJson/reverse'
 
@@ -21,7 +21,7 @@ export function array_orderField(array, field, order) {
   arguments.length === 1 && throw_empty(functionName, 'field')
   type_string(field) || throw_type(functionName, 'field', 'number|string')
   arguments.length === 2 && throw_empty(functionName, 'order')
-  type_order(order) || throw_type(functionName, 'order', 'order')
+  type_boolean(order) || throw_type(functionName, 'order', 'boolean')
   // 开始处理
   const result = array.sort(function(a, b) {
     const x = a[field]

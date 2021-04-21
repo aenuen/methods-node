@@ -1,7 +1,7 @@
 import { throw_empty } from '../throw/empty'
 import { throw_type } from '../throw/type'
 import { type_array } from '../type/array'
-import { type_same } from '../type/same'
+import { type_boolean } from '../type/boolean'
 import { type_json } from '../type/json'
 import { type_string } from '../type/string'
 import { arrayJson_deleteAssignKeyArray } from './deleteAssignKeyArray'
@@ -27,7 +27,7 @@ export function arrayJson_same(arrayJson, assignArray, keyName, same) {
   arguments.length === 2 && throw_empty(functionName, 'keyName')
   type_string(keyName) || throw_type(functionName, 'keyName', 'number|string')
   arguments.length === 3 && throw_empty(functionName, 'same')
-  type_same(same) || throw_type(functionName, 'same', 'same')
+  type_boolean(same) || throw_type(functionName, 'same', 'same')
   // 开始处理
   const array = arrayJson_resetKeyOne(assignArray)
   array.push(keyName)
