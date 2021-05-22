@@ -7,8 +7,8 @@ import { type_string } from '../type/string'
  * @param {number|string} string
  * @returns {string}
  */
-export function hold_numberAndComma(string) {
-  const functionName = 'hold' + '_' + 'numberAndComma'
+export function hold_numberComma(string) {
+  const functionName = 'hold' + '_' + 'numberComma'
   arguments.length === 0 && throw_empty(functionName, 'string')
   type_string(string) || throw_type(functionName, 'string', 'string')
   // 开始处理
